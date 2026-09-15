@@ -321,11 +321,16 @@ responses:
     - text: "Sorry, I didn't get that, can you rephrase?"
 ```
 
-⚠️ **Bekanntes Problem: Bild bei `utter_cheer_up` lädt nicht** ("The image you are requesting does not exist or is no longer available"). Der verlinkte Imgur-Link ist manchmal tot – Imgur löscht alte, ungenutzte Bilder automatisch. Lösung: `image:`-URL durch einen anderen funktionierenden Bild-Link ersetzen, z. B.:
+⚠️ **Bekanntes Problem: Bild bei `utter_cheer_up` lädt nicht** ("The image you are requesting does not exist or is no longer available"). Der verlinkte Imgur-Link ist manchmal tot – Imgur löscht alte, ungenutzte Bilder automatisch. Lösung: `image:`-URL durch einen anderen funktionierenden Bild-Link ersetzen, z. B. diesen Hunde-Link:
 
 ```yaml
-      image: "https://picsum.photos/400/300"
+      image: "https://placedog.net/400/300"
 ```
+
+Falls dieser Link bei euch auch mal nicht lädt, einfach einen der folgenden Alternativen eintragen:
+
+- `https://placekitten.com/400/300` (Kätzchen)
+- `https://picsum.photos/400/300` (zufälliges Foto)
 
 Danach unbedingt neu trainieren (`rasa train`) und den Server neu starten – Responses inkl. Bild-URLs werden beim Training mit ins Modell übernommen, eine reine Änderung in `domain.yml` reicht nicht.
 
