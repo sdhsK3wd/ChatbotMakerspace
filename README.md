@@ -269,7 +269,12 @@ Ihr legt fest, was der Chatbot antwortet (das nennt man NLG – Natural Language
 
 ### Schritt 12 – domain.yml anpassen (Kap. 3.3)
 
-Öffne `moodbot/domain.yml`. Ergänze/prüfe folgende Abschnitte:
+Öffne `moodbot/domain.yml`. Eure Datei aus `rasa init` sieht am Anfang noch deutlich schlanker aus als das, was am Ende dastehen soll – das ist normal! Es handelt sich hier um ein **Zusammenführen**, kein 1:1-Kopieren:
+
+- `entities:` und `slots:` fehlen bei euch komplett → neu hinzufügen
+- Der Intent `tell_name` fehlt in eurer `intents:`-Liste → hinzufügen
+- Die Responses `utter_go_walk`, `utter_ask_name`, `utter_ask_sports` und `utter_default` fehlen bei euch komplett → neu hinzufügen
+- Bei den schon vorhandenen Responses (`utter_greet`, `utter_cheer_up`, `utter_did_that_help`, `utter_happy`, `utter_goodbye`) ändert sich nur der **Text** (jetzt mit `{name}`) – Rest eurer Datei (z. B. `session_config` ganz unten) bleibt unverändert stehen.
 
 ```yaml
 intents:
